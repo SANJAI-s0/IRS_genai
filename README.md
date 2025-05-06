@@ -2,9 +2,14 @@
 An Information Retrieval System is a system designed to search, retrieve, and present information from a large collection of unstructured or semi-structured data (like documents, web pages, articles) based on user queries.
 
 
+#!/bin/bash
+
+echo "📝 Generating README.md..."
+
+cat << 'EOF' > README.md
 # 🔎 Information Retrieval System using Gemini API
 
-This is an intelligent Information Retrieval System built with **Python**, **Streamlit**, and **Google's Gemini API**. Users can upload PDF or text documents and ask questions. The system uses the document content to generate context-aware answers via Gemini's large language models.
+This is an intelligent Information Retrieval System built using **Python**, **Streamlit**, and **Google's Gemini API**. Users can upload PDF or text documents and ask questions — the app provides context-aware answers powered by Gemini 2.0 Flash.
 
 ---
 
@@ -12,67 +17,77 @@ This is an intelligent Information Retrieval System built with **Python**, **Str
 
 - Upload any **PDF or TXT file**
 - Ask **natural language questions** about the uploaded content
-- Get **accurate, context-aware responses** from Gemini 2.0 Flash
-- Useful for:
-  - Research and literature review
-  - Educational Q&A from notes or eBooks
-  - Document understanding in legal, business, or medical fields
+- Get **accurate, context-sensitive responses** via Gemini LLM
 
----
+Common use cases include:
 
-## 📦 Requirements
-
-- Python 3.8 or above
--- streamlit>=1.30.0
--- python-dotenv>=1.0.0
--- google-generativeai>=0.3.0
--- PyPDF2>=3.0.1
-- Google Gemini API key (get it [here](https://aistudio.google.com/app/apikey))
+- 📘 Academic research or literature review  
+- 🏫 Educational queries from notes or study material  
+- 📄 Legal/medical/business document understanding  
 
 ---
 
 ## ⚙️ Installation
 
-Follow these steps to set up and run the project:
+Follow these steps to set up and run the Information Retrieval System locally:
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
+```
 
-### 2. Create and activate a virtual environment (optional but recommended)
+### 2. Create and Activate a Virtual Environment (Recommended)
 
 ```bash
-python -m venv venv
-source venv/bin/activate       # Linux/macOS
-venv\Scripts\activate          # Windows
+# For macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
 
-### 3. Install dependencies
+# For Windows
+python -m venv venv
+venv\Scripts\activate
+```
+
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
+```
 
-### 4. Create a .env file
+### 4. Set Up Environment Variables
+
+Create a .env file in the root directory and add your Gemini API key:
 
 ```bash
 GEMINI_API_KEY=your_actual_gemini_api_key
+```
 
-### 5. Run the Streamlit app
+### 5. Run the Streamlit App
 
 ```bash
 streamlit run app.py
+```
+
+Your Information Retrieval System will now be running in your browser at http://localhost:8501.
 
 ---
 
-## 🧠 How It Works
+## 📦 Requirements
 
-- The user uploads a document (PDF or TXT)
-- The content is extracted and stored as context
-- The user enters a question in the input field
-- A prompt is generated using both the document and the question
-- The prompt is sent to Gemini 2.0 Flash
-- The model returns a context-aware answer, displayed in the app
+- Python 3.8 or higher
+- Gemini API key (Get one)
+- Internet connection
+
+### requirements.txt
+
+```bash
+streamlit>=1.30.0
+python-dotenv>=1.0.0
+google-generativeai>=0.3.0
+PyPDF2>=3.0.1
+```
 
 ---
 
@@ -82,6 +97,7 @@ streamlit run app.py
 
 ```bash
 GEMINI_API_KEY=your_actual_gemini_api_key
+```
 
 ### .gitignore
 
@@ -89,67 +105,36 @@ GEMINI_API_KEY=your_actual_gemini_api_key
 .env
 __pycache__/
 *.pyc
+```
 
-# ⚠️ Keep your .env file private by ensuring it's listed in .gitignore
-
----
-
-## 🛠 Tech Stack / Tools Used
-
-| Tool/Library          | Purpose                             |
-| --------------------- | ----------------------------------- |
-| Python                | Core language                       |
-| Streamlit             | Web-based UI                        |
-| PyPDF2                | PDF text extraction                 |
-| `google.generativeai` | Gemini API integration              |
-| dotenv                | Secure API key management           |
-| Git + GitHub          | Version control and project hosting |
+✅ This ensures your secret keys and compiled files are not pushed to GitHub.
 
 ---
 
-## 📁 Project Structure
+## 🛠 Tech Stack
 
-```bash
-.
-├── app.py                 # Main Streamlit application
-├── .env                  # Gemini API key (ignored)
-├── .gitignore            # To prevent sensitive files from being committed
-├── requirements.txt      # Python dependencies
-└── README.md             # Project documentation
+| Tool/Library        | Purpose                         |
+| ------------------- | ------------------------------- |
+| Python              | Core backend logic              |
+| Streamlit           | Web-based UI framework          |
+| PyPDF2              | PDF text extraction             |
+| google-generativeai | Gemini LLM API access           |
+| python-dotenv       | Environment variable management |
 
 ---
 
 ## 📝 License
 
-This project is licensed under the MIT License.
-Feel free to use, share, and modify with attribution.
+MIT License — use freely with attribution
 
 ---
 
-## 📬 Contact
+## 🧠 How It Works
 
-For issues or ideas, open an issue on:
-https://github.com/SANJAI-s0/IRS_genai
-EOT
+- User uploads a PDF or TXT file.
+- Text is extracted and used as context.
+- User types a question into the interface.
+- The system builds a prompt from the document question.
+- The prompt is sent to Gemini 2.0 Flash via the API.
+- The model returns a response, shown in the UI.
 
-echo "✅ Project setup complete!"
-echo "📁 Next: Add your Gemini API key in the .env file."
-echo "▶️ Run the app with: streamlit run app.py"
-
-```bash
-#yalm
-
----
-
-### 📌 To Use:
-
-1. Save this script as `setup.sh`
-2. Run it in your terminal:
-
-```bash
-chmod +x setup.sh
-./setup.sh
-
-
-
----
