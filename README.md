@@ -1,12 +1,7 @@
-# IRS_genai
+# IRS
+
 An Information Retrieval System is a system designed to search, retrieve, and present information from a large collection of unstructured or semi-structured data (like documents, web pages, articles) based on user queries.
 
-
-#!/bin/bash
-
-echo "📝 Generating README.md..."
-
-cat << 'EOF' > README.md
 # 🔎 Information Retrieval System using Gemini API
 
 This is an intelligent Information Retrieval System built using **Python**, **Streamlit**, and **Google's Gemini API**. Users can upload PDF or text documents and ask questions — the app provides context-aware answers powered by Gemini 2.0 Flash.
@@ -127,7 +122,7 @@ __pycache__/
 
 MIT License — use freely with attribution
 
----
+-----
 
 ## 🧠 How It Works
 
@@ -137,4 +132,3 @@ MIT License — use freely with attribution
 - The system builds a prompt from the document question.
 - The prompt is sent to Gemini 2.0 Flash via the API.
 - The model returns a response, shown in the UI.
-
