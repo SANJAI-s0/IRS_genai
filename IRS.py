@@ -2,7 +2,6 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 import google.generativeai as genai
-
 # Optional: For PDF reading
 import PyPDF2
 import io
