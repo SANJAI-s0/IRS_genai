@@ -28,8 +28,8 @@ Follow these steps to set up and run the Information Retrieval System locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/SANJAI-s0/IRS_genai.git
+cd IRS_genai
 ```
 
 ### 2. Create and Activate a Virtual Environment (Recommended)
@@ -61,7 +61,7 @@ GEMINI_API_KEY=your_actual_gemini_api_key
 ### 5. Run the Streamlit App
 
 ```bash
-streamlit run app.py
+streamlit run IRS.py
 ```
 
 Your Information Retrieval System will now be running in your browser at http://localhost:8501.
@@ -155,7 +155,7 @@ MIT License — use freely with attribution
 ## 📬 Contact
 
 Built by Sanjai
-For suggestions or contributions, open an issue or a pull request on GitHub.
+For suggestions or contributions, open an issue or a pull request on GitHub : https://github.com/SANJAI-s0.
 
 ```bash
 Let me know if you'd like me to:
