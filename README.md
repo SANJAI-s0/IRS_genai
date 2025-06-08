@@ -1,20 +1,23 @@
 # 🔎 Information Retrieval System using Gemini API
 
-This is an intelligent Information Retrieval System built using **Python**, **Streamlit**, and **Google's Gemini API**. Users can upload PDF or text documents and ask questions — the app provides context-aware answers powered by Gemini 2.0 Flash.
+This is an intelligent Information Retrieval System built using **Python**, **Streamlit**, and **Google's Gemini API**. Users can upload PDF, DOCX, or text documents and ask questions — the app provides context-aware answers powered by Gemini 2.0 Flash.
 
 ---
 
 ## 📌 Use Case
 
-- Upload any **PDF or TXT file**
+- Upload any **PDF, DOCX, or TXT file**
 - Ask **natural language questions** about the uploaded content
-- Get **accurate, context-sensitive responses** via Gemini LLM
+- Generate **summaries** of uploaded documents
+- Export answers or summaries as **PDFs**
+- Convert responses into **text-to-speech audio**
 
 Common use cases include:
 
 - 📘 Academic research or literature review  
 - 🏫 Educational queries from notes or study material  
 - 📄 Legal/medical/business document understanding  
+- 🔉 Audio-based document briefing for accessibility  
 
 ---
 
@@ -68,16 +71,26 @@ Your Information Retrieval System will now be running in your browser at http://
 ## 📦 Requirements
 
 - Python 3.8 or higher
-- Gemini API key (Get one)
+- Gemini API key (Get one from Google AI Studio)
 - Internet connection
 
 ### requirements.txt
 
 ```bash
-streamlit>=1.30.0
-python-dotenv>=1.0.0
-google-generativeai>=0.3.0
-PyPDF2>=3.0.1
+
+streamlit==1.37.0
+python-dotenv==1.0.1
+google-generativeai==0.5.4
+PyPDF2==3.0.1
+speechrecognition==3.10.1
+pyttsx3==2.90
+fpdf==1.7.2
+python-docx==1.1.0
+
+# Additional pakages
+protobuf~=5.29.4
+dotenv~=0.9.9
+
 ```
 
 ---
@@ -96,6 +109,9 @@ GEMINI_API_KEY=your_actual_gemini_api_key
 .env
 __pycache__/
 *.pyc
+*.mp3
+*.wav
+*.ogg
 ```
 
 ✅ This ensures your secret keys and compiled files are not pushed to GitHub.
@@ -109,8 +125,11 @@ __pycache__/
 | Python              | Core backend logic              |
 | Streamlit           | Web-based UI framework          |
 | PyPDF2              | PDF text extraction             |
+| python-docx         | Word document parsing           |
 | google-generativeai | Gemini LLM API access           |
 | python-dotenv       | Environment variable management |
+| pyttsx3             | Text-to-speech conversion       |
+| fpdf                | Exporting summaries as PDFs     |
 
 ---
 
@@ -122,9 +141,27 @@ MIT License — use freely with attribution
 
 ## 🧠 How It Works
 
-- User uploads a PDF or TXT file.
-- Text is extracted and used as context.
-- User types a question into the interface.
-- The system builds a prompt from the document question.
-- The prompt is sent to Gemini 2.0 Flash via the API.
-- The model returns a response, shown in the UI.
+- 📁 User uploads one or more PDF, DOCX, or TXT files.
+- 📄 Text is extracted and combined into a unified context.
+- 👤 User can:
+  - Ask natural language questions
+  - Request a full or topic-specific summary
+  - Download responses as PDF or listen via audio
+- 🧠 The system constructs a prompt using document content and user input.
+- 🚀 This prompt is sent to Gemini 2.0 Flash via API.
+- 📤 The model returns a response, which is displayed in the UI.
+- 📥 Users can download summaries or responses in multiple formats.
+
+## 📬 Contact
+
+Built by Sanjai
+For suggestions or contributions, open an issue or a pull request on GitHub.
+
+```bash
+Let me know if you'd like me to:
+- Add a section on **project structure**
+- Include **deployment instructions** (e.g., Streamlit Cloud or Hugging Face)
+- Attach this 'README.md' file to your project zip
+```
+
+I'm ready when you are!
