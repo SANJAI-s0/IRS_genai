@@ -155,7 +155,7 @@ MIT License — use freely with attribution
 ## 📬 Contact
 
 Built by Sanjai
-For suggestions or contributions, open an issue or a pull request on GitHub : https://github.com/SANJAI-s0.
+For suggestions or contributions, open an issue or a pull request on GitHub : https://github.com/SANJAI-s0/IRS_genai/issues
 
 ```bash
 Let me know if you'd like me to:
